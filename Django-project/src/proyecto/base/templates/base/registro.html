@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de usuario</title>
+</head>
+<body>
+{% extends 'base/inicio.html' %}
+{% block content %}
+    <div class="barra-superior">
+        <h1>Crear usuario</h1>
+    </div>
+    <div class="cuerpo-tarjeta">
+        <form method="POST">
+            {% csrf_token %}
+            <label>{{form.username.label}}</label>
+            {{form.username}}
+            <label>{{form.password1.label}}</label>
+            {{form.password1}}
+            <label>{{form.password2.label}}</label>
+            {{form.password2}}
+            <input style="margin-top: 10px;" class="botones" type="submit" value="Registrar">
+        </form>
+        <p>Ya cuentas con un usuario? <a href="{% url 'login' %}">Ingresa</a></p>
+    </div>
+</body>
+{% endblock content %}
+</html>

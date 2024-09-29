@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmar Acción</title>
+</head>
+<body>
+{% extends 'base/inicio.html' %}
+{% block content %}
+    <div class="barra-superior">
+        <a href="{% url 'tareas' %}">&#x21B5; Volver</a>
+    </div>
+
+    <div class="cuerpo-tarjeta">
+        <form method="POST">
+            {% csrf_token %}
+            <p>Vas a eliminar esta tarea: "{{tarea}}"</p>
+            <input class="botones" type="submit" value="Eliminar">
+        </form>
+    </div>
+</body>
+{% endblock content %}
+</html>

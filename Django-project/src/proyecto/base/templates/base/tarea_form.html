@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+</head>
+<body>
+{% extends 'base/inicio.html' %}
+{% block content %}
+    <div class="barra-superior">
+        <a href="{% url 'tareas' %}">&#x21B5; Volver</a>
+    </div>
+    <div class="cuerpo-tarjeta">
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class="botones" type="submit" value="Enviar">
+        </form>
+    </div>
+</body>
+{% endblock content %}
+</html>

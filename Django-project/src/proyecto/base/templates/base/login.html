@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+{% extends 'base/inicio.html' %}
+{% block content %}
+    <div class="barra-superior">
+        <h1>Iniciar sesión</h1>
+    </div>
+
+    <div class="cuerpo-tarjeta">
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class="botones" type="submit" value="ingresar">
+        </form>
+        <p>No tienes una cuenta? <a href="{% url 'registro' %}">Registrate</a></p>
+    </div>
+
+</body>
+{% endblock content %}
+</html>
